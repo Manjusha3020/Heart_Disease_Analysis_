@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Story — PulseView{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-bottom: 60px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Guided walkthrough</span>
+      <h2>Four scenes, one narrative</h2>
+      <p>Follow the story from the overall picture down to the specific factors that move the numbers.</p>
+    </div>
+
+    <div class="dash-frame">
+      <div class="dash-frame-bar">
+        <span></span><span></span><span></span>
+        <span class="dash-frame-label">heart_disease — Story</span>
+      </div>
+      <div class="tableau-embed">
+        <iframe
+          src="{{ embed_url }}"
+          title="Live Tableau story: four-scene walkthrough of heart disease risk factors"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="dash-frame-fallback">
+        Embed not loading? <a href="{{ embed_url }}" target="_blank" rel="noopener">Open the live story on Tableau Public</a>.
+      </p>
+    </div>
+
+    <div class="section-head" style="margin-top: 56px;">
+      <span class="eyebrow">What each scene covers</span>
+      <h2>A quick reference while you click through</h2>
+    </div>
+
+    <div class="panel-grid">
+      {% for scene in scenes %}
+      <div class="panel-card">
+        <span class="panel-index">0{{ loop.index }}</span>
+        <h4>{{ scene.title }}</h4>
+        <p>{{ scene.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

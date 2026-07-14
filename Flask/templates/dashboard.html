@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — PulseView{% endblock %}
+
+{% block content %}
+
+<section class="section" style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Live view</span>
+      <h2>The full dashboard, in one view</h2>
+      <p>
+        Four panels, one dataset — sex, race, diabetes, stroke history, smoking,
+        and alcohol use, all cross-tabulated against heart disease outcomes.
+      </p>
+    </div>
+
+    <div class="dash-frame">
+      <div class="dash-frame-bar">
+        <span></span><span></span><span></span>
+        <span class="dash-frame-label">heart_disease — Heart Disease Dashboard</span>
+      </div>
+      <div class="tableau-embed">
+        <iframe
+          src="{{ embed_url }}"
+          title="Live Tableau dashboard: Gender, Diabetic vs Stroke, Age, Race, Smoking/Alcohol, and Physical Activity vs Heart Disease"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="dash-frame-fallback">
+        Embed not loading? <a href="{{ embed_url }}" target="_blank" rel="noopener">Open the live dashboard on Tableau Public</a>.
+      </p>
+    </div>
+
+    <div class="panel-grid">
+      {% for panel in panels %}
+      <div class="panel-card">
+        <span class="panel-index">0{{ loop.index }}</span>
+        <h4>{{ panel.title }}</h4>
+        <p>{{ panel.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow" style="justify-content:center;">Prefer the walkthrough?</span>
+    <h2 style="margin-bottom: 22px;">See it explained scene by scene</h2>
+    <a href="{{ url_for('story') }}" class="btn btn-primary">Go to the Story</a>
+  </div>
+</section>
+
+{% endblock %}
