@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% block title %}PulseView — Heart Disease Analysis{% endblock %}</title>
+<meta name="description" content="An interactive Tableau dashboard and story exploring heart disease risk factors, embedded in a Flask website." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="{{ url_for('home') }}" class="brand">
+      <svg class="brand-pulse" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 15 H14 L19 4 L25 26 L31 10 L35 18 L40 15 H60" />
+      </svg>
+      PulseView
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}" class="{{ 'active' if request.endpoint == 'home' }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}" class="{{ 'active' if request.endpoint == 'about' }}">About</a></li>
+      <li><a href="{{ url_for('dashboard') }}" class="{{ 'active' if request.endpoint == 'dashboard' }}">Dashboard</a></li>
+      <li><a href="{{ url_for('story') }}" class="{{ 'active' if request.endpoint == 'story' }}">Story</a></li>
+      <li><a href="{{ url_for('contact') }}" class="{{ 'active' if request.endpoint == 'contact' }}">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="{{ url_for('dashboard') }}" class="btn btn-primary">View Dashboard</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="brand">
+      <svg class="brand-pulse" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 15 H14 L19 4 L25 26 L31 10 L35 18 L40 15 H60" />
+      </svg>
+      PulseView
+    </div>
+    <p class="footer-note">Built with Tableau &amp; Flask · Heart Disease Analysis Project</p>
+  </div>
+</footer>
+
+</body>
+</html>

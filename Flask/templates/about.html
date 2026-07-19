@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}About — PulseView{% endblock %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container about-intro">
+    <div class="about-copy">
+      <span class="eyebrow">About the project</span>
+      <h2>Why this dataset, and why Tableau</h2>
+      <p>
+        Heart disease is one of the leading causes of death worldwide, and its
+        reach keeps growing with modern lifestyle changes, poor diet, and
+        inactivity. Prevention and early detection still make the biggest
+        difference — but spotting the right patterns in patient demographics,
+        medical history, and lifestyle data takes the right tools.
+      </p>
+      <p>
+        This project uses Tableau to turn a raw heart disease dataset into a
+        dashboard and a guided story, surfacing the risk factors that matter
+        most and the correlations that support better decisions — for
+        clinicians, policymakers, and individuals alike. This site embeds
+        that dashboard and story in a Flask front end so anyone can explore
+        them in a browser.
+      </p>
+    </div>
+
+    <div class="about-art">
+      <div class="about-art-ring">
+        <div class="about-art-heart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#e8425a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/>
+          </svg>
+        </div>
+        <div class="orbit-icon pos-1" title="Vitals">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="orbit-icon pos-2" title="BMI">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="orbit-icon pos-3" title="Diet">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 1-7.743 5.743L4 20l-2-2 6.257-6.257A6 6 0 1 1 18 8Z"/></svg>
+        </div>
+        <div class="orbit-icon pos-4" title="Records">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="orbit-icon pos-5" title="Smoking">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5c0 3 5 6 5 11"/><path d="M17 2a5 5 0 0 1 0 10"/></svg>
+        </div>
+        <div class="orbit-icon pos-6" title="Population">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Who this helps</span>
+      <h2>Three people, three ways of reading the same data</h2>
+      <p>The dashboard is built to answer different questions depending on who's looking at it.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card card-persona">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v4M16 3v4M4 11h16M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/></svg>
+        </div>
+        <span class="persona-name">Cardiologist</span>
+        <h3>Dr. Sharma</h3>
+        <p>
+          A senior cardiologist at a metropolitan hospital, trying to pin
+          down which lifestyle factors drive rising heart disease among
+          middle-aged patients. She segments by age, BMI, cholesterol, and
+          smoking to identify high-risk groups and design targeted
+          campaigns — weight management, smoking cessation, and more.
+        </p>
+      </div>
+
+      <div class="card card-persona">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M13 21V11l6 3v7"/></svg>
+        </div>
+        <span class="persona-name">Health policy</span>
+        <h3>Ramesh</h3>
+        <p>
+          Works with a government health department, shaping preventive
+          policy. He compares heart disease prevalence across rural and
+          urban populations and studies how sedentary lifestyle indicators
+          correlate with disease rates — informing workplace fitness
+          programs, tobacco regulation, and healthy-food subsidies.
+        </p>
+      </div>
+
+      <div class="card card-persona">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <span class="persona-name">Patient</span>
+        <h3>Anita, 45</h3>
+        <p>
+          Has a family history of heart disease and wants to track her own
+          risk. A simplified dashboard lets her compare her cholesterol,
+          blood pressure, and lifestyle habits against healthy benchmarks,
+          with clear next steps — more activity, less fat — she can act on.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">How it was built</span>
+      <h2>From raw data to a browser-ready dashboard</h2>
+    </div>
+
+    <div class="process-list">
+      <div class="process-item">
+        <span class="process-num">01</span>
+        <h4>Problem understanding</h4>
+        <p>Defined the business problem and requirements around heart disease risk analysis.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">02</span>
+        <h4>Data collection</h4>
+        <p>Collected the dataset, stored it in a database, and connected it to Tableau.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">03</span>
+        <h4>Data preparation</h4>
+        <p>Cleaned and shaped the data so it was ready for visualization.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">04</span>
+        <h4>Visualization</h4>
+        <p>Built the dashboard and the four-scene story in Tableau.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">05</span>
+        <h4>Performance testing</h4>
+        <p>Checked filter behavior, calculated fields, and rendering performance.</p>
+      </div>
+      <div class="process-item">
+        <span class="process-num">06</span>
+        <h4>Web integration</h4>
+        <p>Embedded the dashboard and story into this Flask site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
